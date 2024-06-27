@@ -50,13 +50,13 @@ toDoContainer.addEventListener('click', function(event) {
 function deleteTask(ID) {
     let taskElement = document.querySelector(`[data-id="${ID}"]`);
     if (taskElement) {
-        if (taskElement.querySelector('p').style.textDecoration === "line-through") {
-            complete_count--;
+        if (taskElement.classList.contains('completed')) {
+            complete_count--; 
             completeNBR.innerHTML = `${complete_count}`;
         }
         taskElement.remove();
         tasks_count--;
-        updateTaskCount();
+        updateTaskCount(); 
     }
 }
 
