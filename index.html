@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to_do_app</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            color: rgb(0, 0, 0);
+
+        }
+        body{
+            background-color: lightslategrey;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        }
+        .main{
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+        
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding: 15px;
+            height: 70px;
+            width: 100%;
+            background-color: hsl(163, 49%, 45%);
+        }
+        .input{
+            
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            background-color: hsl(163, 49%, 35%);
+            width: 95%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+        .input i{
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: hsl(163, 49%, 35%);;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background-color: azure;
+        }
+        .bx:hover{
+            transform: rotate(90deg);
+            transition: .5s;
+        }
+        input{
+            outline: none;
+            padding-left: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            background-color: hsl(163, 49%, 35%);
+            height: 95%;
+            width: 98%;
+        }
+        input:focus{
+            outline: none;
+            border: none;
+        }
+        /* to do container */
+
+        .toDoContainer{
+            
+            padding: 15px 0;
+            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            width: 103%;
+            background-color: rgb(172, 172, 172);
+        }
+        .mession{
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            height: 35px;
+            background-color: aliceblue;
+        }
+        .mession p{
+            font-size: 21px;
+            font-weight: bold;
+        }
+        .rmBtn{
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            background-color: rgb(201, 35, 62);
+        }
+        /* ____________________ */
+        .info{
+
+            display: flex;
+            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+            width: 100%;
+        }
+        .info .completeNBR{
+            border-radius: 5px;
+            padding:1px 10px;
+            background-color: rgb(35, 195, 201);
+            color: white;
+
+        }
+        .info .tasksNBR{
+            color: white;
+            border-radius: 5px;
+            padding:1px 10px;
+            background-color: rgb(201, 35, 62);
+        }
+        .info h3 ,h4{
+            font-size: 22px;
+            font-weight:bold ;
+        }
+        .mession.completed {
+    background-color: rgb(195, 222, 195);
+}
+.mession.completed p {
+    text-decoration: line-through;
+}
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <header>
+                <div class="input">
+                    <input type="text" class="show" placeholder="Enter a task">
+                    <i class='bx bx-plus'></i>
+                </div>
+                
+            </header>
+            <sectio class="toDoContainer">
+                 
+            </sectio>
+
+            <section class="info">
+                <h3>tasks <span class="tasksNBR" >0</span></h3>
+                <h4>complete <span class="completeNBR" >0</span></h4>
+            </section>
+    </div>
+
+   
+    <script src="to_do_app.js" ></script>
+
+</body>
+</html>
