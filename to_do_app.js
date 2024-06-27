@@ -52,7 +52,7 @@ function deleteTask(ID) {
     if (taskElement) {
         if (taskElement.querySelector('p').style.textDecoration === "line-through") {
             complete_count--;
-            updateCompletedTaskCount();
+            completeNBR.innerHTML = `${complete_count}`;
         }
         taskElement.remove();
         tasks_count--;
@@ -67,11 +67,11 @@ function doneMession(ID) {
     if (taskElement.classList.contains('completed')) {
         taskElement.classList.remove('completed');
         complete_count--;
-        updateCompletedTaskcount();
+        completeNBR.innerHTML = `${complete_count}`;
     } else {
         taskElement.classList.add('completed');
         complete_count++;
-        updateCompletedTaskcount();
+      completeNBR.innerHTML = `${complete_count}`;
     }
 }
 
