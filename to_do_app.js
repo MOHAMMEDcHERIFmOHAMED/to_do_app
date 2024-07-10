@@ -1,3 +1,4 @@
+
 let addBtn = document.querySelector('.bx');
 let input = document.querySelector('.show');
 let toDoContainer = document.querySelector('.toDoContainer');
@@ -9,7 +10,7 @@ addBtn.onclick = addToList;
 let tasks_count = 0;
 let complete_count = 0;
 
-// Load tasks from local storage
+// Load tasks from local Storage
 let arr = JSON.parse(localStorage.getItem("TASKS")) || [];
 loadData();
 
