@@ -3,117 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>to_do_app</title>
+    <title>To-Do App</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
-            color: rgb(0, 0, 0);
-
+            box-sizing: border-box;
         }
-        body{
+        body {
             background-color: lightslategrey;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: center;
+            font-family: Arial, sans-serif;
         }
-        .main{
-            height: 100%;
-            width: 50%;
+        .main {
+            width: 90%;
+            max-width: 600px;
             display: flex;
             flex-direction: column;
             justify-content: start;
             align-items: center;
-        
         }
-        header{
+        header {
             display: flex;
-            justify-content: center;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             margin-top: 30px;
             padding: 15px;
-            height: 70px;
             width: 100%;
             background-color: hsl(163, 49%, 45%);
+            border-radius: 10px;
         }
-        .input{
-            
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px;
-            background-color: hsl(163, 49%, 35%);
-            width: 95%;
-            height: 60%;
+        .input {
             display: flex;
-            justify-content: center;
-            align-items: center;
             justify-content: space-between;
-
-        }
-        .input i{
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
             align-items: center;
+            width: 100%;
+            background-color: hsl(163, 49%, 35%);
+            border-radius: 25px;
+            padding: 0 10px;
+        }
+        .input i {
+            cursor: pointer;
             font-size: 30px;
-            font-weight: bold;
-            color: hsl(163, 49%, 35%);;
+            color: hsl(163, 49%, 35%);
+            background-color: azure;
+            border-radius: 50%;
             height: 40px;
             width: 40px;
-            border-radius: 50%;
-            background-color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .bx:hover{
+        .bx:hover {
             transform: rotate(90deg);
-            transition: .5s;
+            transition: 0.5s;
         }
-        input{
+        input {
             outline: none;
-            padding-left: 15px;
-            font-size: 20px;
-            font-weight: bold;
             border: none;
+            font-size: 18px;
             background-color: hsl(163, 49%, 35%);
-            height: 95%;
-            width: 98%;
+            color: white;
+            width: 100%;
+            padding: 10px;
         }
-        input:focus{
-            outline: none;
-            border: none;
-        }
-        /* to do container */
-
-        .toDoContainer{
-            
-            padding: 15px 0;
-            gap: 15px;
+        .toDoContainer {
+            margin-top: 20px;
+            padding: 15px;
+            width: 100%;
+            background-color: rgb(172, 172, 172);
+            border-radius: 10px;
             display: flex;
             flex-direction: column;
-            justify-content: start;
-            align-items: center;
-            width: 103%;
-            background-color: rgb(172, 172, 172);
+            gap: 15px;
         }
-        .mession{
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 8px;
+        .mession {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            width: 90%;
-            height: 35px;
+            align-items: center;
+            padding: 10px;
             background-color: aliceblue;
+            border-radius: 8px;
+            cursor: pointer;
         }
-        .mession p{
-            font-size: 21px;
+        .mession p {
+            font-size: 18px;
             font-weight: bold;
         }
-        .rmBtn{
+        .rmBtn {
             cursor: pointer;
             font-size: 18px;
             border-radius: 8px;
@@ -122,63 +104,86 @@
             padding: 5px 10px;
             background-color: rgb(201, 35, 62);
         }
-        /* ____________________ */
-        .info{
-
+        .info {
             display: flex;
-            justify-content: center;
             justify-content: space-between;
             align-items: center;
-            height: 40px;
             width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: hsl(163, 49%, 45%);
+            border-radius: 10px;
         }
-        .info .completeNBR{
+        .info h3, .info h4 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .info .tasksNBR, .info .completeNBR {
+            padding: 1px 10px;
             border-radius: 5px;
-            padding:1px 10px;
             background-color: rgb(35, 195, 201);
             color: white;
-
         }
-        .info .tasksNBR{
-            color: white;
-            border-radius: 5px;
-            padding:1px 10px;
+        .info .tasksNBR {
             background-color: rgb(201, 35, 62);
         }
-        .info h3 ,h4{
-            font-size: 22px;
-            font-weight:bold ;
-        }
         .mession.completed {
-    background-color: rgb(195, 222, 195);
-}
-.mession.completed p {
-    text-decoration: line-through;
-}
+            background-color: rgb(195, 222, 195);
+        }
+        .mession.completed p {
+            text-decoration: line-through;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 95%;
+            }
+            input {
+                font-size: 16px;
+            }
+            .mession p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .input i {
+                font-size: 24px;
+                height: 35px;
+                width: 35px;
+            }
+            input {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .mession p {
+                font-size: 14px;
+            }
+            .info h3, .info h4 {
+                font-size: 16px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="main">
         <header>
-                <div class="input">
-                    <input type="text" class="show" placeholder="Enter a task">
-                    <i class='bx bx-plus'></i>
-                </div>
-                
-            </header>
-            <sectio class="toDoContainer">
-                 
-            </sectio>
-
-            <section class="info">
-                <h3>tasks <span class="tasksNBR" >0</span></h3>
-                <h4>complete <span class="completeNBR" >0</span></h4>
-            </section>
+            <div class="input">
+                <input type="text" class="show" placeholder="Enter a task">
+                <i class='bx bx-plus'></i>
+            </div>
+        </header>
+        <section class="toDoContainer">
+            <!-- Tasks will be added here -->
+        </section>
+        <section class="info">
+            <h3>Tasks <span class="tasksNBR">0</span></h3>
+            <h4>Complete <span class="completeNBR">0</span></h4>
+        </section>
     </div>
 
-   
-    <script src="to_do_app.js" ></script>
+    <script src="to_do_app.js"></script>
 
 </body>
 </html>
